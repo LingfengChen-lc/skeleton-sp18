@@ -3,7 +3,7 @@ import java.util.Iterator;
 
 public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /* Index for the next dequeue or peek. */
-    private int first;            // index for the next dequeue or peek
+    private int first;
     /* Index for the next enqueue. */
     private int last;
     /* Array for storing the buffer data. */
@@ -63,13 +63,13 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     }
 
     /**
-     * Implements abstract method from the Iterable interface
+     * Implements abstract method from the Iterable interface.
      * */
     public Iterator<T> iterator() {
         return new MyIterator();
     }
 
-    private class MyIterator implements Iterator<T>{
+    private class MyIterator implements Iterator<T> {
         private int position = first;
         private boolean checked = false;
 

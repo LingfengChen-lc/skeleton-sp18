@@ -2,25 +2,47 @@ package synthesizer;
 
 import java.util.Iterator;
 
-public interface BoundedQueue<T> extends Iterable<T>{
+/**
+ * Interface of a BoundedQueue.
+ * @param <T>
+ * @author Lingfeng Chen
+ */
+public interface BoundedQueue<T> extends Iterable<T> {
+    /**queue's capacity.
+     * @return int*/
+    int capacity();
+    /**queue's current number of elements.
+     * @return int*/
+    int fillCount();
+    /**enqueue abstract method.
+     * @param x */
+    void enqueue(T x);
+    /**dequeue abstract method.
+     * @return T*/
+    T dequeue();
+    /**peek abstract method.
+     * @return T*/
+    T peek();
 
-    int capacity();     // return size of the buffer
-
-    int fillCount();    // return number of items currently in the buffer
-
-    void enqueue(T x);  // add item x to the end
-
-    T dequeue();        // delete and return item from the front
-
-    T peek();           // return (but do not delete) item from the front
-
+    /**
+     * Iterator class.
+     * @return Iterator<T>
+     */
     Iterator<T> iterator();
 
-    default boolean isEmpty() {       // is the buffer empty (fillCount equals zero)?
+    /**
+     * IsEmpty method.
+     * @return boolean
+     */
+    default boolean isEmpty() {
         return fillCount() == 0;
     }
 
-    default boolean isFull() {        // is the buffer full (fillCount is same as capacity)?
+    /**
+     * isFull method.
+     * @return boolean
+     */
+    default boolean isFull() {
         return fillCount() == capacity();
     }
 

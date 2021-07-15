@@ -46,8 +46,7 @@ public class GuitarString {
         double avgNote = (buffer.dequeue() + buffer.peek()) / 2 * DECAY;
         if (Math.random() > 0.5) {
             buffer.enqueue(-avgNote);
-        }
-        else {
+        } else {
             buffer.enqueue(avgNote);
         }
     }
