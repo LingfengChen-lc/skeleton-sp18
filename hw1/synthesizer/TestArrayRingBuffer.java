@@ -9,8 +9,21 @@ import static org.junit.Assert.*;
 public class TestArrayRingBuffer {
     @Test
     public void someTest() {
-        //ArrayRingBuffer arb = new ArrayRingBuffer(10);
+        ArrayRingBuffer arb = new ArrayRingBuffer(10);
     }
+
+//    @Test
+//    public void testPeek() {
+//        ArrayRingBuffer<Double> arb = new ArrayRingBuffer<>(10);
+//        arb.enqueue(10.0);
+////        for (int i = 0; i < 10; i++) {
+////            arb.enqueue(i * 1.0);
+////        }
+////        for (int i = 0; i < 10; i++) {
+////            assertEquals((arb.peek() * 1.0), (i * 1.0));
+////        }
+//        assertEquals(arb.peek(), Double.valueOf(10.0));
+//    }
 
     /** Calls tests for ArrayRingBuffer. */
     public static void main(String[] args) {
